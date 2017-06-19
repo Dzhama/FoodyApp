@@ -2,16 +2,27 @@ import React, { Component } from 'react';
 
 import {Container, Content, Button, Text, Form, Item, Input, Label, Icon} from 'native-base';
 
+import Firebase from 'firebase';
+
 import AppHeader from '../appheader';
+
+import {writeUserData} from '../firebase'
+    
+
 
 export default class Register extends Component {
       constructor(props) {
         super(props);
             this.state = {
-                email: '',
-                password: ''
+                email: '1@gmail.com',
+                password: "1234567"
             };
           }
+
+
+    submitme(){
+        writeUserData(this.state.email, this.state.password)
+    }
 
      render() {
         return (
@@ -30,7 +41,7 @@ export default class Register extends Component {
                             onChangeText={(password) => this.setState({password})} />
                         </Item>
                     </Form>
-                    <Button rounded block>
+                    <Button rounded block onPress={() => this.submitme(this)}>
                         <Text>Register</Text>
                     </Button>
                     <Button rounded style={{marginTop: 10,}} block >
@@ -45,3 +56,5 @@ export default class Register extends Component {
     }
 }
 
+
+<div> </div>

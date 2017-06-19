@@ -12,7 +12,7 @@ const config = {
 firebase.initializeApp(config)
 
 
-function writeUserData(password, email,userId) {
+export function writeUserData(email, password, userId) {
 const newPostKey = firebase.database().ref().push().key;
   
   firebase.database().ref('users/' ).push({

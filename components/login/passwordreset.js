@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import {Container, Content, Button, Text, Form, Item, Input, Label} from 'native-base';
 
+import Firebase from 'firebase';
+
 import AppHeader from '../appheader';
 
 export default class PasswordReset extends Component {
